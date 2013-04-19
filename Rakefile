@@ -1,7 +1,8 @@
-require 'rake/gempackagetask'
+require 'rubygems'
+require 'rubygems/package_task'
 
 spec = eval(File.read('okta-hello.gemspec'))
 
-Rake::GemPackageTask.new(spec) do |pkg|
+Gem::PackageTask.new(spec) do |pkg|
 end
 
