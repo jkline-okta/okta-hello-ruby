@@ -18,8 +18,16 @@ https://github.com/net-ssh/net-ssh/blob/master/lib/net/ssh.rb#L175
 Notes and References
 -----
 1. Don't indent more than two spaces for nested modules:
-https://github.com/net-ssh/net-ssh/blob/master/lib/net/ssh/verifiers/null.rb
+```ruby
+module Net; module SSH; module Verifiers
 
+    # ...
+
+end; end; end
+```
+https://github.com/net-ssh/net-ssh/blob/master/lib/net/ssh/verifiers/null.rb
 
 2. Awesome class based Error handling using simple exception inheritance.
 https://github.com/net-ssh/net-ssh/blob/master/lib/net/ssh/errors.rb
+
+3. http://guides.rubygems.org/make-your-own-gem
