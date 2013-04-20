@@ -1,5 +1,5 @@
 #!/usr/bin/env ruby1.9
 
-require_relative 'okta/hello'
+require 'okta/hello'
 
 Okta::Hello.hello()
