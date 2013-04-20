@@ -2,10 +2,10 @@ require File.join([File.dirname(__FILE__),'lib','okta','hello','version'])
 
 Gem::Specification.new do |spec|
   spec.name = 'okta_hello'
-  spec.version = Okta::Hello::VERSION::STRING
+  spec.version = Okta::Hello::VERSION
 
   spec.author = 'jkline-okta'
-  spec.email = spec.author . '@example.com'
+  spec.email = spec.author + '@example.com'
   spec.summary = 'A simple hello world program wrapped in a gem'
 
   candidates = Dir.glob('{bin,lib,test}/**/*') + [__FILE__, 'README.md']
