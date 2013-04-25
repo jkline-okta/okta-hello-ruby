@@ -15,14 +15,18 @@ Source0: %{rbname}-%{version}.gem
 # Make sure the spec template is included in the SRPM
 Source1: rubygem19-%{rbname}.spec.in
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
-Requires: ruby19 <%= spec.required_ruby_version %>
+<% for version in spec.required_ruby_version -%>
+Requires: ruby19 <%= version %>
+<% end -%>
 Requires: rubygems19 >= <%= Gem::RubyGemsVersion %>
 <% for d in spec.dependencies -%>
 <% for req in d.requirement -%>
 Requires: rubygem19-<%= d.name %> <%= req %>
 <% end -%>
 <% end -%>
-BuildRequires: ruby19 <%= spec.required_ruby_version %>
+<% for version in spec.required_ruby_version -%>
+BuildRequires: ruby19 <%= version %>
+<% end -%>
 BuildRequires: rubygems19 >= <%= Gem::RubyGemsVersion %>
 BuildArch: noarch
 Provides: ruby(<%= spec.name.capitalize %>) = %{version}
