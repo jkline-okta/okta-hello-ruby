@@ -14,7 +14,7 @@ gemout=$(gem1.9 build okta_hello.gemspec)
 gemfile=$(echo "$gemout" | awk '/File:/ { print $2 }' )
 
 # Interpolate the rpm spec for the new gem
-gem2rpm -t rubygem19-okta_hello.spec.template -o rubygem19-okta_hello.spec $gemfile
+gem2rpm -t rubygem19-okta_hello.spec.in -o rubygem19-okta_hello.spec $gemfile
 
 # rpmbuild needs to find the gem
 cp $gemfile $HOME/rpmbuild/SOURCES/
