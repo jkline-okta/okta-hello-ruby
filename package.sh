@@ -11,6 +11,10 @@ gemspec=okta_hello.gemspec
 rpmspec_template=rubygem19-okta_hello.spec.in
 rpmspec=rubygem19-okta_hello.spec
 
+# This is where rubygem19-json and rubygem19-bigdecimal are installed, for
+# example.
+export GEM_HOME="/usr/share/gems1.9"
+
 # Make gem
 gemout=$(gem1.9 build $gemspec)
 
